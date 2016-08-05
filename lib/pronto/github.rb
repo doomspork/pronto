@@ -31,7 +31,7 @@ module Pronto
     end
 
     def create_pull_comment(comment)
-      Logger.new($stdout).log(comment.inspect)
+      puts comment.inspect
       @config.logger.log("Creating pull request comment on #{pull_id}")
       client.create_pull_comment(slug, pull_id, comment.body,
                                  pull_sha || comment.sha,
